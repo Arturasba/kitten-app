@@ -3,6 +3,9 @@ import { createStackNavigator } from "react-navigation-stack";
 import KittenListScreen from "./screens/KittenList";
 import KittenDetailScreen from "./screens/KittenDetail";
 import { createAppContainer } from "react-navigation";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import reducer from "./store/reducer";
 
 export default function App() {
   const StackNavigation = createStackNavigator({
@@ -12,5 +15,9 @@ export default function App() {
 
   const Navigator = createAppContainer(StackNavigation);
 
-  return <Navigator />;
+  return (
+    <Provider store={createStore(reducer)}>
+      <Navigator />
+    </Provider>
+  );
 }
