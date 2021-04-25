@@ -13,7 +13,7 @@ while (i < 100) {
 }
 const initialState = {
   fullKittenList: kittensList,
-  kittens: kittensList.slice(30),
+  kittens: kittensList.slice(0, 29),
   kittenCount: 30,
 };
 
@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         kittenCount: action.number,
-        kittens: state.fullKittenList.slice(action.number - 1),
+        kittens: state.fullKittenList.slice(0, action.number),
       };
   }
   return state;
