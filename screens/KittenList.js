@@ -1,3 +1,4 @@
+// Core
 import React, { useState } from "react";
 import {
   StyleSheet,
@@ -7,9 +8,13 @@ import {
   Text,
   TextInput,
 } from "react-native";
+
+// Redux
 import { useSelector, useDispatch } from "react-redux";
-import KittenCard from "../components/kittenCard";
 import * as actions from "../store/actions";
+
+// Components
+import KittenCard from "../components/kittenCard";
 
 const KittenList = (props) => {
   const [numberOfItems, setNumberOfItems] = useState(30);
